@@ -19,18 +19,18 @@ void testRrule(
   required Iterable<DateTime> expected,
   bool isInfinite = false,
   required RruleL10n Function() l10n,
-  bool isNonLatin = false,
+  bool testNonLatin = false,
 }) {
   group(description, () {
     setUp(() async {
-      if (isNonLatin) {
+      if (testNonLatin) {
         Intl.defaultLocale = 'ar';
         await initializeDateFormatting();
       }
     });
 
     tearDown(() async {
-      if (isNonLatin) {
+      if (testNonLatin) {
         Intl.defaultLocale = 'en';
         await initializeDateFormatting();
       }

@@ -18,7 +18,7 @@ void main() {
     required DateTime start,
     required Iterable<DateTime> expected,
     bool isInfinite = false,
-    bool isNonLatin = false,
+    bool testNonLatin = false,
   }) {
     utils.testRrule(
       description,
@@ -29,7 +29,7 @@ void main() {
       expected: expected,
       isInfinite: isInfinite,
       l10n: () => l10n,
-      isNonLatin: isNonLatin,
+      testNonLatin: testNonLatin,
     );
   }
 
@@ -49,7 +49,7 @@ void main() {
       ...1.until(31).map((d) => DateTime.utc(1997, 11, d, 9, 0, 0)),
       ...1.until(24).map((d) => DateTime.utc(1997, 12, d, 9, 0, 0)),
     ],
-    isNonLatin: true,
+    testNonLatin: true,
   );
 
   // All examples taken from https://tools.ietf.org/html/rfc5545#section-3.8.5.3.
